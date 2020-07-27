@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_grey_600">
+
+    <TextView
+        android:id="@+id/nameresttv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+    
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:id="@+id/clientinfobtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/inforest"
+        />
+
+    <Button
+        android:id="@+id/productsbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/productos"
+        />
+
+    <Button
+        android:id="@+id/pedidosinfobtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/pedidos"
+        />
+
+    <Button
+        android:id="@+id/cuentasinfobtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/cuentas"
+        />
+
+</LinearLayout>

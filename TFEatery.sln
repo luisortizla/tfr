@@ -1,0 +1,33 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFEatery", "TFEatery\TFEatery.csproj", "{823CC205-07D7-4A04-8352-E7F1BE739497}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{823CC205-07D7-4A04-8352-E7F1BE739497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{823CC205-07D7-4A04-8352-E7F1BE739497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{823CC205-07D7-4A04-8352-E7F1BE739497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{823CC205-07D7-4A04-8352-E7F1BE739497}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$0.TextStylePolicy = $4
+		$4.FileWidth = 80
+		$4.TabsToSpaces = True
+		$4.scope = text/plain
+		$0.StandardHeader = $5
+		$0.VersionControlPolicy = $6
+	EndGlobalSection
+EndGlobal

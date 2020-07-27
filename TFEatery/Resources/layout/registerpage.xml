@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_grey_600"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/pfr"
+        android:textColor="@android:color/white"
+        android:gravity="center_horizontal"
+        android:textSize="40dp"
+        />
+
+    <EditText
+        android:id="@+id/restnametxt"
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:hint="@string/restnamecreate"
+        android:textAlignment="center"
+        />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="@string/Ciudad"/>
+        
+        <Spinner
+            android:id="@+id/cityspn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="7"
+           />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            
+            android:text="@string/plaza"/>
+        
+        <Spinner
+            android:id="@+id/plazaspn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="7"
+           />
+
+	
+        </GridLayout>>
+
+    <EditText
+        android:id="@+id/responsabletxt"
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        
+        android:hint="@string/responsable"
+        
+        android:textAlignment="center"
+         />
+
+    <EditText
+        android:id="@+id/emailresttxt"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        
+        android:hint="@string/emailrest"
+        
+        android:textAlignment="center"
+         />
+
+    <EditText
+        android:id="@+id/passrgtxt"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        
+        android:hint="@string/contraseñarest"
+        
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/phoneresttxt"
+        android:inputType="phone"
+        android:numeric="integer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        
+        android:hint="@string/celrest"
+        
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/bancountktxt"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        
+        android:hint="@string/cuentadep"
+        
+        android:textAlignment="center"
+        />
+
+<GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:layout_weight="2"
+   android:orientation="horizontal"
+  >
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+            android:layout_columnWeight="1"
+            android:text="@string/Banco"
+            android:gravity="center"/>
+
+
+        <Spinner
+            android:id="@+id/bancospn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_columnWeight="10"/>
+
+
+        </GridLayout>
+
+    
+
+    <Button
+        android:id="@+id/nextbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        
+        android:text="@string/next"
+        
+        
+        
+         />
+    
+</LinearLayout>

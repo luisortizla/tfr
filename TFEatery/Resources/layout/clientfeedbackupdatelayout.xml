@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="@string/terminemos"
+        android:textAlignment="center"
+        />
+
+    <ImageView
+        android:id="@+id/logoimage"
+        android:contentDescription="@string/logorest"
+         android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        />
+    <Button
+        android:id="@+id/insertlogobtn"
+        android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/logoinsert"/>
+
+    <EditText
+        android:id="@+id/restdescriptiontxt"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:hint="@string/descripcionrest"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="@string/abre"/>
+
+    <Spinner
+        android:id="@+id/abrespn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="@string/cierre"
+        />
+    <Spinner
+        android:id="@+id/cierrespn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"/>
+        
+       <Button
+        android:id="@+id/regfinishbtn"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="@string/finish"
+        />
+
+</LinearLayout>
