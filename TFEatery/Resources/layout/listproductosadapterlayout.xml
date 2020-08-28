@@ -6,24 +6,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_grey_600">
-
+    android:background="@android:color/white">
     <ImageView
-        android:contentDescription="@string/logorest"
         android:id="@+id/productoimageiv"
+        android:src="@drawable/roundimage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:paddingLeft="20dp"
         android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"/>
-
+        android:layout_centerVertical="true"  
+        />
     <TextView
         android:id="@+id/productonametv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/productoimageiv"
         android:paddingLeft="20dp"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/holo_blue_dark"
         android:textStyle="bold"
         />
 
@@ -34,7 +32,7 @@
         android:layout_below="@id/productonametv"
         android:layout_toRightOf="@id/productoimageiv"
         android:paddingLeft="20dp"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/holo_blue_dark"
         />
     <LinearLayout
         android:id="@+id/linelt"
@@ -51,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/holo_blue_dark"
             />
         <TextView
             android:id="@+id/descuentotv"
@@ -59,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/holo_blue_dark"/>
     </LinearLayout>
 
     <TextView
@@ -69,6 +67,14 @@
         android:layout_below="@id/linelt"
         android:layout_toRightOf="@id/productoimageiv"
         android:paddingLeft="20dp"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/holo_blue_dark"/>
+    <TextView
+        android:id="@+id/dispo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pricetv"
+        android:layout_toRightOf="@id/productoimageiv"
+        android:paddingLeft="20dp"
+        android:textColor="@android:color/holo_red_dark"/>
 
 </RelativeLayout>

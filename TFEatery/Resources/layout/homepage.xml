@@ -6,16 +6,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_grey_600">
+    android:background="@drawable/loginback">
 
     <TextView
         android:id="@+id/nameresttv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-    
+        android:fontFamily="@font/atmaadd"
+    android:textSize="30sp"
         android:textColor="@android:color/white"
         android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:background="@drawable/gradienthome"
         />
 
     <Button
@@ -23,7 +26,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_margin="30dp"
+        android:background="@drawable/loginbutton"
         android:text="@string/inforest"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/atmabold"
+        android:textSize="25sp"
         />
 
     <Button
@@ -31,7 +39,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_margin="30dp"
+        android:background="@drawable/loginbutton"
         android:text="@string/productos"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/atmabold"
+        android:textSize="25sp"
         />
 
     <Button
@@ -39,7 +52,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_margin="30dp"
+        android:background="@drawable/loginbutton"
         android:text="@string/pedidos"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/atmabold"
+        android:textSize="25sp"
         />
 
     <Button
@@ -47,7 +65,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_margin="30dp"
+        android:background="@drawable/loginbutton"
         android:text="@string/cuentas"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/atmabold"
+        android:textSize="25sp"
         />
 
 </LinearLayout>

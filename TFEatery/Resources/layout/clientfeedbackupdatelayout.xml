@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/loginback">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,6 +14,8 @@
         android:layout_weight="2"
         android:text="@string/terminemos"
         android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="40sp"
         />
 
     <ImageView
@@ -20,7 +23,7 @@
         android:contentDescription="@string/logorest"
          android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         android:layout_weight="2"
         />
     <Button
@@ -28,47 +31,75 @@
         android:layout_width="match_parent"
        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/logoinsert"/>
+        android:layout_marginTop="15dp"
+        android:text="@string/logoinsert"
+        android:background="@drawable/botonred"
+        android:layout_marginHorizontal="50dp"
+        android:textColor="@android:color/white"/>
 
     <EditText
         android:id="@+id/restdescriptiontxt"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_weight="3"
+        android:layout_marginVertical="20dp"
+        android:textAlignment="center"
         android:hint="@string/descripcionrest"
+        android:textColorHint="@color/material_grey_900"
+        android:background="@drawable/loginandregisterbtn"
+        android:layout_marginHorizontal="15dp"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:text="@string/abre"/>
+        android:text="@string/abre"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <Spinner
         android:id="@+id/abrespn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
+        android:layout_marginHorizontal="100dp"
+        android:background="@drawable/loginandregisterbtn"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:text="@string/cierre"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
         />
     <Spinner
         android:id="@+id/cierrespn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"/>
+        android:layout_weight="2"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/loginandregisterbtn"/>
         
        <Button
         android:id="@+id/regfinishbtn"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
         android:layout_weight="2"
+        android:layout_marginTop="10dp"
         android:text="@string/finish"
+        android:background="@drawable/loginbutton"
+        android:textColor="@android:color/white"
+        android:layout_marginHorizontal="30dp"
         />
 
 </LinearLayout>

@@ -23,5 +23,7 @@ namespace TFEatery.Entidades
 
         public byte[] FotoProducto { get; set; }
 
+        public string Disponibilidad { get; set; }
+
     }
 }

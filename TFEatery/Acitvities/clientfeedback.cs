@@ -20,24 +20,25 @@ using Bitmap = Android.Graphics.Bitmap;
 
 namespace TFEatery.Acitvities
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", Theme = "@style/MyTheme.Splash", MainLauncher = false, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class clientfeedback : AppCompatActivity
     {
 
         private MySqlConnection conn;
         TextView namerestfbtv, habretv, hcierratv, descriptiontv;
         ImageView logoimage;
-        Button updateclientfeedbackbtn;
+        Button updateclientfeedbackbtn, tuubicacion;
 
 
         public clientfeedback()
         {
             MySqlConnectionStringBuilder con = new MySqlConnectionStringBuilder();
-            con.Server = "mysql-10951-0.cloudclusters.net";
-            con.Port = 10951;
+            con.Server = "mysql-12128-0.cloudclusters.net";
+            con.Port = 12160;
             con.Database = "TapFood";
             con.UserID = "curecu";
             con.Password = "curecu123";
+
 
             conn = new MySqlConnection(con.ToString());
 
@@ -56,6 +57,7 @@ namespace TFEatery.Acitvities
             descriptiontv = FindViewById<TextView>(Resource.Id.descriptiontv);
             logoimage = FindViewById<ImageView>(Resource.Id.logoimage1);
             updateclientfeedbackbtn = FindViewById<Button>(Resource.Id.clientfeedbackupdatebtn);
+            tuubicacion = FindViewById<Button>(Resource.Id.ubicacion);
 
             //SE UTILIZA EL USUARIO INGRESADO EN EL LOGIN QUE SE GUARDO CON SHARED PREFERENCES
             ISharedPreferences preff = PreferenceManager.GetDefaultSharedPreferences(this);
@@ -96,22 +98,55 @@ namespace TFEatery.Acitvities
                 hcierratv.Text = cierro.ToString();
                 string descr = (string)plz["DescripcionRestaurante"];
                 descriptiontv.Text = descr;
+
+                string tipoestablecimiento = (string)plz["NombrePlaza"];
+                string tienda = "Tienda";
+                string restaurante = "Restaurante";
+                if (tipoestablecimiento==tienda || tipoestablecimiento == restaurante)
+                {
+                    tuubicacion.Visibility = ViewStates.Visible;
+                }
+                else
+                {
+                    plz.Close();
+                    var lat = preff.GetString("LatitudPlaza", "");
+                    var lng = preff.GetString("LongitudPlaza", "");
+                    double latitud = Convert.ToDouble(lat);
+                    double longitud = Convert.ToDouble(lng);
+                    string sql1 = string.Format("Update TapFood.Restaurantes SET LatitudRestaurante='{0}', LongitudRestaurante='{1}' where (IdRestaurante='{2}')", latitud, longitud, jee);
+                    Console.WriteLine(sql1);
+                    MySqlCommand insert1 = new MySqlCommand(sql1, conn);
+                    insert1.ExecuteNonQuery();
+                    tuubicacion.Visibility = ViewStates.Invisible;
+                }
                 
                 plz.Close();
             }
 
-
+            tuubicacion.Click += Tuubicacion_Click;
             updateclientfeedbackbtn.Click += Updateclientfeedbackbtn_Click;
 
 
         }
 
-        
+        private void Tuubicacion_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(MapPage));
+        }
 
         private void Updateclientfeedbackbtn_Click(object sender, EventArgs e)
         {
             conn.Close();
             StartActivity(typeof(clientfeedbackupdate));
+        }
+
+        protected override void OnRestart()
+        {
+            base.OnRestart();
+            Intent refresh = new Intent(this, typeof(clientfeedback));
+            refresh.AddFlags(ActivityFlags.NoAnimation);
+            Finish();
+            StartActivity(refresh);
         }
     }
 }

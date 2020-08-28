@@ -21,7 +21,7 @@ using Uri = Android.Net.Uri;
 
 namespace TFEatery.Acitvities
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", Theme = "@style/MyTheme.Splash", MainLauncher = false, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class agregarproducto : AppCompatActivity
     {
         public static readonly int PickImageId = 1000;
@@ -35,8 +35,8 @@ namespace TFEatery.Acitvities
         public agregarproducto()
         {
             MySqlConnectionStringBuilder con = new MySqlConnectionStringBuilder();
-            con.Server = "mysql-10951-0.cloudclusters.net";
-            con.Port = 10951;
+            con.Server = "mysql-12128-0.cloudclusters.net";
+            con.Port = 12160;
             con.Database = "TapFood";
             con.UserID = "curecu";
             con.Password = "curecu123";
@@ -131,6 +131,15 @@ namespace TFEatery.Acitvities
             ISharedPreferences coladeraton = PreferenceManager.GetDefaultSharedPreferences(this);
             var path = coladeraton.GetString("Path", "");
 
+            ISharedPreferences restname = PreferenceManager.GetDefaultSharedPreferences(this);
+            var nombrerest = restname.GetString("NombreRestaurante", "");
+
+            ISharedPreferences ciudad = PreferenceManager.GetDefaultSharedPreferences(this);
+            var city = ciudad.GetString("Ciudad", "");
+
+            ISharedPreferences plazaname = PreferenceManager.GetDefaultSharedPreferences(this);
+            var nombreplaza = plazaname.GetString("NombrePlaza", "");
+
             string tipocomida = productotipodecomidaspn.SelectedItem.ToString();
 
             Random rnd = new Random();
@@ -143,44 +152,58 @@ namespace TFEatery.Acitvities
             seco.Compress(Bitmap.CompressFormat.Png, 0, nel);
             byte[] bitmapData = nel.ToArray();
 
+            string disp ="Disponible";
+
             try
             {
                 string rest1 = new string(IdRestaurante);
-                var sql = new MySqlCommand("INSERT INTO `TapFood`.`Producto` (`IdProducto`, `NombreProducto`, `IdRestaurante`, `NombreRestaurante`, `TipoDeComida`, `Descripcion`, `PrecioProducto`, `TiempoEntrega`, `Descuento`, `FotoProducto`) VALUES (@idprod, @nombreprod, @idrest, @nombrerest, @tipocomida, @descripcionprod, @precioprod, @tiempoentrega, @descuentoprod, @fotoprod)", conn);
+                var sql = new MySqlCommand("INSERT INTO `TapFood`.`Producto` (`IdProducto`, `NombreProducto`, `IdRestaurante`, `NombreRestaurante`, `IdPlaza`,  `TipoDeComida`, `Descripcion`, `PrecioProducto`, `TiempoEntrega`, `Descuento`, `FotoProducto`, `Disponibilidad`) VALUES (@idprod, @nombreprod, @idrest, @nombrerest, @idplaza, @tipocomida, @descripcionprod, @precioprod, @tiempoentrega, @descuentoprod, @fotoprod, @dispo)", conn);
                 sql.Parameters.Add(new MySqlParameter("idprod", MySqlDbType.String)).Value = rest1;
                 sql.Parameters.Add(new MySqlParameter("nombreprod", MySqlDbType.String)).Value = nameproductocreadotxt.Text;
                 sql.Parameters.Add(new MySqlParameter("idrest", MySqlDbType.String)).Value = jee.ToString();
-                sql.Parameters.Add(new MySqlParameter("nombrerest", MySqlDbType.String)).Value = GetNameRest(jee.ToString());
+                sql.Parameters.Add(new MySqlParameter("nombrerest", MySqlDbType.String)).Value = nombrerest.ToString();
+                sql.Parameters.Add(new MySqlParameter("idplaza", MySqlDbType.Int32)).Value = GetIdPlaza(city.ToString(), nombreplaza.ToString());     
                 sql.Parameters.Add(new MySqlParameter("tipocomida", MySqlDbType.String)).Value = tipocomida;
                 sql.Parameters.Add(new MySqlParameter("descripcionprod", MySqlDbType.String)).Value = productodescpcioncreaciontxt.Text;
                 sql.Parameters.Add(new MySqlParameter("precioprod", MySqlDbType.Float)).Value = precioproductotxt.Text;
                 sql.Parameters.Add(new MySqlParameter("tiempoentrega", MySqlDbType.Int32)).Value = timpoentregatxt.Text;
                 sql.Parameters.Add(new MySqlParameter("descuentoprod", MySqlDbType.Int32)).Value = descuentocreatetxt.Text;
                 sql.Parameters.Add(new MySqlParameter("fotoprod", MySqlDbType.MediumBlob)).Value = bitmapData;
+                sql.Parameters.Add(new MySqlParameter("dispo", MySqlDbType.String)).Value = disp;
+                Console.WriteLine(sql);
                 sql.ExecuteNonQuery();
                 Toast.MakeText(this, "Listo, has creado tu nuevo producto!".ToString(), ToastLength.Long).Show();
-
+                Finish();
             }
             catch
             {
+                
                 Toast.MakeText(this, "Por favor verifica tus datos y vuelve a intentarlo.", ToastLength.Long).Show();
             }
         }
 
-        private string GetNameRest(string idrest)
+        private object GetIdPlaza(string ciudad, string  nombre)
         {
             
-            string sql = string.Format("SELECT * FROM TapFood.Restaurantes where (IdRestaurante = '{0}')", idrest);
-            MySqlCommand cty = new MySqlCommand(sql, conn);
+            string sql2 = string.Format("Select IdPlaza from TapFood.Plaza where (Ciudad='{0}' and NombrePlaza ='{1}')", ciudad.Trim(), nombre.Trim());
+            Console.WriteLine(sql2);
+            MySqlCommand cty = new MySqlCommand(sql2, conn);
             MySqlDataReader plz;
             plz = cty.ExecuteReader();
             plz.Read();
-            string Rest = (string)plz["NombreRestaurante"];
-            plz.Close();
 
-            return Rest;
+
+                int idplaza = (Int32)plz["IdPlaza"];
+
+                //int id = Int32.Parse(idplaza);
+                Console.WriteLine(idplaza);
+                plz.Close();
+             
+            
+
+            return idplaza;
+
         }
-
 
         //SE OBITENE EL URL INTERNO COMPLETO PARA PODER REALIZAR LA CONVERSION A BTYE[] Y ALMACENAMIENTO EN MYSQL
         private string GetPathToImage(Android.Net.Uri uri)

@@ -6,16 +6,18 @@ xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_grey_600"
+    android:background="@drawable/loginback"
     >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:gravity="center_vertical"
         android:text="@string/pfr"
+        android:fontFamily="@font/atmabold"
+        android:background="@drawable/gradientbg"
         android:textColor="@android:color/white"
-        android:gravity="center_horizontal"
         android:textSize="40dp"
         />
 
@@ -25,58 +27,80 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
+        android:layout_marginHorizontal="10dp"
         android:hint="@string/restnamecreate"
+        android:textColorHint="@color/material_grey_850"
+        android:textColor="@android:color/black"
+        android:background="@drawable/loginandregisterbtn"
         android:textAlignment="center"
+        android:layout_marginVertical="15dp"
         />
 
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="vertical"
-        
-        >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:layout_weight="2"
+        android:layout_marginHorizontal="10dp"
+   android:orientation="horizontal"
+        android:layout_marginVertical="15dp"
+  >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
             android:layout_columnWeight="1"
-            android:text="@string/Ciudad"/>
-        
+            android:text="@string/Ciudad"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"/>
+
+
         <Spinner
             android:id="@+id/cityspn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="7"
-           />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_columnWeight="10"
+            android:background="@drawable/loginandregisterbtn"/>
+        </GridLayout>
+    <GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:layout_weight="2"
+        android:layout_marginHorizontal="10dp"
+   android:orientation="horizontal"
+        android:layout_marginVertical="15dp"
+  >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
             android:layout_columnWeight="1"
-            
-            android:text="@string/plaza"/>
-        
+            android:text="@string/plaza"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"/>
+
+
         <Spinner
             android:id="@+id/plazaspn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="7"
-           />
-
-	
-        </GridLayout>>
-
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_columnWeight="10"
+            android:background="@drawable/loginandregisterbtn"/>
+        </GridLayout>
     <EditText
         android:id="@+id/responsabletxt"
         android:inputType="textPersonName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/loginandregisterbtn"
         android:hint="@string/responsable"
-        
+        android:textColorHint="@color/material_grey_850"
+        android:textColor="@android:color/black"
         android:textAlignment="center"
+        android:layout_marginVertical="15dp"
          />
 
     <EditText
@@ -85,10 +109,13 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        
+        android:layout_marginHorizontal="10dp"
         android:hint="@string/emailrest"
-        
+        android:background="@drawable/loginandregisterbtn"
         android:textAlignment="center"
+        android:textColorHint="@color/material_grey_850"
+        android:textColor="@android:color/black"
+        android:layout_marginVertical="15dp"
          />
 
     <EditText
@@ -97,10 +124,13 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/loginandregisterbtn"
         android:hint="@string/contraseñarest"
-        
+        android:textColorHint="@color/material_grey_850"
+        android:textColor="@android:color/black"
         android:textAlignment="center"
+        android:layout_marginVertical="15dp"
         />
 
     <EditText
@@ -110,10 +140,13 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/loginandregisterbtn"
         android:hint="@string/celrest"
-        
+        android:textColorHint="@color/material_grey_850"
+        android:textColor="@android:color/black"
         android:textAlignment="center"
+        android:layout_marginVertical="15dp"
         />
 
     <EditText
@@ -122,17 +155,22 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/loginandregisterbtn"
         android:hint="@string/cuentadep"
-        
+        android:textColorHint="@color/material_grey_850"
+        android:textColor="@android:color/black"
         android:textAlignment="center"
+        android:layout_marginVertical="15dp"
         />
 
 <GridLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
    android:layout_weight="2"
+        android:layout_marginHorizontal="10dp"
    android:orientation="horizontal"
+        android:layout_marginVertical="15dp"
   >
 
    <TextView
@@ -140,16 +178,17 @@ xmlns:tools="http://schemas.android.com/tools"
        android:layout_height="match_parent"
             android:layout_columnWeight="1"
             android:text="@string/Banco"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"/>
 
 
         <Spinner
             android:id="@+id/bancospn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_columnWeight="10"/>
-
-
+            android:layout_columnWeight="10"
+            android:background="@drawable/loginandregisterbtn"/>
         </GridLayout>
 
     
@@ -159,10 +198,10 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        
-        android:text="@string/next"
-        
-        
+        android:text="@string/finish"
+        android:background="@drawable/loginbutton"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="15dp"
         
          />
     

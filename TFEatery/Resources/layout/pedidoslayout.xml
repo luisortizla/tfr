@@ -6,24 +6,28 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_grey_600">
+    android:background="@drawable/loginback">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tuspedidos"
         android:textAlignment="center"
-        android:textSize="40sp"
-        android:textColor="@android:color/white"/>
+        android:textSize="45sp"
+        android:fontFamily="@font/atmabold"
+        android:textColor="@android:color/white"
+        android:background="@drawable/gradientbg"/>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ListView
         android:id="@+id/pedidoslist"
         android:layout_weight="20"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:choiceMode="singleChoice"
-        android:clickable="true"
-        
-        >
+        android:clickable="true">
     </ListView>
-
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

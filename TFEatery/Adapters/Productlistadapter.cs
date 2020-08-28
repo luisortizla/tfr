@@ -74,6 +74,18 @@ namespace TFEatery.Adapters
             TextView prodprecio = view.FindViewById<TextView>(Resource.Id.pricetv);
             prodprecio.Text = "$" + prod.PrecioProducto.ToString();
 
+            TextView dispo = view.FindViewById<TextView>(Resource.Id.dispo);
+            if(prod.Disponibilidad == "Disponible")
+            {
+                dispo.Text = "";
+            }
+            else
+            {
+                dispo.Text = "Sin disponiblidad al cliente";
+                dispo.SetTextColor(Color.Red);
+                view.SetBackgroundColor(Color.LightCoral);
+            }
+
             return view;
         }
 

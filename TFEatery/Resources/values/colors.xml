@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#1B3147</color>
     <color name="colorAccent">#3498db</color>
     <color name="splash_background">#fff</color>
+    <color name="redcolor">#ff5757</color>
+    <color name="bluecolor">#0e94e1</color>
 </resources>

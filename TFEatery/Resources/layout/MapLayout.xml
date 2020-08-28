@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <com.mapbox.mapboxsdk.maps.MapView
+      android:id="@+id/mapView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+        />
+    <Button
+        android:id="@+id/estaubicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botongreen"
+        android:text="@string/seleccionar"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp"/>
+</FrameLayout>

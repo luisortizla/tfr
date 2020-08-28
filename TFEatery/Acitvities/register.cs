@@ -34,8 +34,8 @@ namespace TFEatery.Acitvities
         public registerpage()
         {
             MySqlConnectionStringBuilder con = new MySqlConnectionStringBuilder();
-            con.Server = "mysql-10951-0.cloudclusters.net";
-            con.Port = 10951;
+            con.Server = "mysql-12128-0.cloudclusters.net";
+            con.Port = 12160;
             con.Database = "TapFood";
             con.UserID = "curecu";
             con.Password = "curecu123";

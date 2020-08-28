@@ -1,14 +1,17 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
-
+using System.Threading;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Preferences;
 using Android.Runtime;
+using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
@@ -19,9 +22,10 @@ using AlertDialog = Android.App.AlertDialog;
 
 namespace TFEatery.Acitvities
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", Theme = "@style/MyTheme.Splash", MainLauncher = false, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class pedidospage : AppCompatActivity
     {
+        private SwipeRefreshLayout refreshLayout;
         public List<Pedidosadap> pedidos = new List<Pedidosadap>();
         ListView list;
         private MySqlConnection conn;
@@ -29,8 +33,8 @@ namespace TFEatery.Acitvities
         public pedidospage()
         {
             MySqlConnectionStringBuilder con = new MySqlConnectionStringBuilder();
-            con.Server = "mysql-10951-0.cloudclusters.net";
-            con.Port = 10951;
+            con.Server = "mysql-12128-0.cloudclusters.net";
+            con.Port = 12160;
             con.Database = "TapFood";
             con.UserID = "curecu";
             con.Password = "curecu123";
@@ -45,6 +49,7 @@ namespace TFEatery.Acitvities
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.pedidoslayout);
             list = FindViewById<ListView>(Resource.Id.pedidoslist);
+            refreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.swipeRefreshLayout);
 
             ISharedPreferences preff = PreferenceManager.GetDefaultSharedPreferences(this);
             var jee = preff.GetString("Usuario", "");
@@ -89,7 +94,26 @@ namespace TFEatery.Acitvities
             list.ChoiceMode = ChoiceMode.Single;
             //list.ItemSelected += List_ItemSelected;
             list.ItemClick += List_ItemClick;
-        
+
+            refreshLayout.SetColorSchemeColors(Color.Red, Color.Green, Color.Blue, Color.Yellow);
+            refreshLayout.Refresh += RefreshLayout_Refresh;
+
+        }
+
+        private void RefreshLayout_Refresh(object sender, EventArgs e)
+        {
+            BackgroundWorker work = new BackgroundWorker();
+            work.DoWork += Work_DoWork;
+            work.RunWorkerCompleted += Work_RunWorkerCompleted;
+            work.RunWorkerAsync();
+        }
+        private void Work_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            refreshLayout.Refreshing = false;
+        }
+        private void Work_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Thread.Sleep(1000);
         }
 
         private void List_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

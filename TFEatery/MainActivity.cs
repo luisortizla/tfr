@@ -14,7 +14,7 @@ using Android.Preferences;
 
 namespace TFEatery
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", Theme = "@style/MyTheme.Splash", MainLauncher = false, NoHistory = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : AppCompatActivity
     {
         EditText userlogintxt, passlogintxt;
@@ -25,8 +25,8 @@ namespace TFEatery
         public MainActivity()
         {
             MySqlConnectionStringBuilder con = new MySqlConnectionStringBuilder();
-            con.Server = "mysql-10951-0.cloudclusters.net";
-            con.Port = 10951;
+            con.Server = "mysql-12128-0.cloudclusters.net";
+            con.Port = 12160;
             con.Database = "TapFood";
             con.UserID = "curecu";
             con.Password = "curecu123";
@@ -76,16 +76,14 @@ namespace TFEatery
                     ISharedPreferences preff = PreferenceManager.GetDefaultSharedPreferences(this);
                     ISharedPreferencesEditor edit = preff.Edit();
                     edit.PutString("Usuario", userlogintxt.Text.ToString());
-                    
                     edit.Apply();
-
-                    StartActivity(pis);
-                    
+                    usr.Close();
                     Toast.MakeText(this, "Has ingresado!", ToastLength.Long).Show();
-                 
+                    StartActivity(pis);
                 }
                 else
                 {
+                    usr.Close();
                     Toast.MakeText(this, "Tus datos son errones, revisalor por favor.", ToastLength.Long).Show();
 
                 }
@@ -98,7 +96,7 @@ namespace TFEatery
 
         private void Registerbtn_Click(object sender, EventArgs e)
         {
-           
+            Finish();
             StartActivity(typeof(registerpage));
         }
 

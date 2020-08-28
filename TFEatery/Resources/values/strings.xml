@@ -89,4 +89,8 @@
     <string name="insertar">Insertar foto</string>
     <string name="tuspedidos">Pedidos en curso</string>
     <string name="cantidad">Cantidad</string>
+    <string name="tipo">Tipo</string>
+    <string name="pedidosfinalizados">Historial de pedidos</string>
+    <string name="tuubicacion">Establece tu ubicacion</string>
+    <string name="seleccionar">Seleccionar ubicacion</string>
 </resources>

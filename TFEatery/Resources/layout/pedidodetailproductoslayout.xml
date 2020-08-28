@@ -5,12 +5,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textColor="@android:color/black"/>
     <TextView
         android:id="@+id/cantidad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textColor="@android:color/black"/>
     
 </LinearLayout>

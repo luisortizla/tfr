@@ -32,7 +32,7 @@ using Uri = Android.Net.Uri;
 
 namespace TFEatery.Acitvities
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", Theme = "@style/MyTheme.Splash", MainLauncher = false, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class clientfeedbackupdate : AppCompatActivity
     {
         public static readonly string USER = "Usuario";
@@ -51,8 +51,8 @@ namespace TFEatery.Acitvities
         public clientfeedbackupdate()
         {
             MySqlConnectionStringBuilder con = new MySqlConnectionStringBuilder();
-            con.Server = "mysql-10951-0.cloudclusters.net";
-            con.Port = 10951;
+            con.Server = "mysql-12128-0.cloudclusters.net";
+            con.Port = 12160;
             con.Database = "TapFood";
             con.UserID = "curecu";
             con.Password = "curecu123";
@@ -167,6 +167,7 @@ namespace TFEatery.Acitvities
             if (resultado == true)
             {
                 Toast.MakeText(this, "Listo, hemos actualizado tu informacion!", ToastLength.Long).Show();
+                Finish();
             }
             
         }

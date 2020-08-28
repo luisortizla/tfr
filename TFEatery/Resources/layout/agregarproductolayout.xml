@@ -6,73 +6,137 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_grey_600">
+    android:background="@drawable/loginback">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
+        
         android:text="@string/ingresemoslosproductos"
         android:textColor="@android:color/white"
+        android:background="@drawable/gradientbg"
         android:textAlignment="center"
-        android:textSize="30sp"/>
+        android:gravity="center_vertical"
+        android:textSize="35sp"/>
     <EditText
         android:id="@+id/nameproductocreadotxt"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:hint="@string/productonombre"/>
-<Spinner
-        android:id="@+id/productotipodecomidaspn"
+        android:layout_margin="15dp"
+        android:textAlignment="center"
+        android:background="@drawable/loginandregisterbtn"
+        android:hint="@string/productonombre"
+        android:textColorHint="@color/material_grey_600"
+        android:textColor="@android:color/black"/>
+
+    <GridLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-        android:layout_weight="2"/>
+   android:layout_weight="2"
+        android:layout_margin="15dp"
+        android:layout_marginHorizontal="10dp"
+   android:orientation="horizontal"
+        android:layout_marginVertical="15dp"
+  >
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+            android:layout_columnWeight="1"
+            android:text="@string/tipo"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"/>
+
+
+        <Spinner
+            android:id="@+id/productotipodecomidaspn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_columnWeight="10"
+            android:background="@drawable/loginandregisterbtn"/>
+        </GridLayout>
     <EditText
         android:id="@+id/productodescpcioncreaciontxt"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:hint="@string/productodescripcion"/>
+        android:layout_margin="15dp"
+        android:textAlignment="center"
+        android:hint="@string/productodescripcion"
+        android:background="@drawable/loginandregisterbtn"
+        
+        android:textColorHint="@color/material_grey_600"
+        android:textColor="@android:color/black"/>
     <EditText
         android:id="@+id/precioproductotxt"
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:hint="@string/precio"/>
+        android:layout_margin="15dp"
+        android:hint="@string/precio"
+        android:textAlignment="center"
+        
+        android:background="@drawable/loginandregisterbtn"
+       
+        android:textColorHint="@color/material_grey_600"
+        android:textColor="@android:color/black"/>
     <EditText
         android:id="@+id/timpoentregatxt"
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:hint="@string/tiempoentrega"/>
+        android:layout_margin="15dp"
+        android:hint="@string/tiempoentrega"
+        android:textAlignment="center"
+        
+        android:background="@drawable/loginandregisterbtn"
+        
+        android:textColorHint="@color/material_grey_600"
+        android:textColor="@android:color/black"/>
     <EditText
         android:id="@+id/descuentocreatetxt"
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:hint="@string/descuento"/>
+        android:layout_margin="15dp"
+        android:hint="@string/descuento"
+        android:textAlignment="center"
+        
+        android:background="@drawable/loginandregisterbtn"
+        
+        android:textColorHint="@color/material_grey_600"
+        android:textColor="@android:color/black"/>
     <ImageView
         android:id="@+id/productoimagencreacion"
         android:contentDescription="@string/title"
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_weight="10"/>
     <Button
         android:id="@+id/fotoproductobtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/insertar"/>
+        android:layout_margin="15dp"
+        android:text="@string/insertar"
+        android:background="@drawable/loginbutton"
+        android:textColor="@android:color/white"/>
     <Button
         android:id="@+id/creacionproductofinalizarbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:text="@string/finish"/>
+        android:text="@string/finish"
+        android:background="@drawable/botongreen"
+        android:textColor="@android:color/white"
+        android:layout_margin="15dp"/>
 </LinearLayout>
